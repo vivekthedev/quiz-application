@@ -1,0 +1,6 @@
+env/
+*.pyc
+db.sqlite3
+quiz/__pycache__/
+quiz/migrations/__pycache__/
+core/__pycache__/

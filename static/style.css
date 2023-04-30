@@ -1,0 +1,135 @@
+@font-face {
+    font-family: "Retroyal";
+    src: url("./retroyal.ttf");
+}
+
+@font-face {
+    font-family: "Casliga";
+    src: url("./calisga.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Retroyal';
+    height: 100vh;
+}
+/* background-color: #f2edd9; */
+.name {
+    font-size: .8125rem;
+    color: #5e2f2f;
+    margin-top: 6px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.base_head {
+    top: 0;
+    width: 100%;
+    height: 60px;
+    /* background-color: #f67231; */
+    font-family: "Casliga";
+    color: #5e2f2f;
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.head_text{
+    font-family: "Casliga";
+    color: #5e2f2f;
+    font-weight: 900;
+    margin: auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.nav_text{
+    font-family: "Casliga";
+    color: #5e2f2f;
+    font-size: 1.5em;
+}
+.img-container {
+    text-align: center;
+}
+
+
+input[type='submit'], button {
+    width: 100%;
+    text-transform: uppercase;
+    margin-top: 10px
+
+}
+
+.form_container {
+
+    border-left: 2px solid lightcoral;
+    font-size: 1.25em;
+    
+}
+.form_container input, select {
+    padding: 5px;
+    width: 300px;
+}
+
+.form_container input[type=submit]{
+    font-size:1.25em;
+}
+.form_container label{
+    font-weight: 600;
+    margin-top: 10px;
+}
+.form_container input[type=submit]{
+    margin-top: 20px;
+}
+.form_container input[type=checkbox]{
+    width: 20px;
+}
+.border-right{
+    border-left: none;
+    border-right: 2px solid lightcoral;
+}
+.log_out_msg{
+    font-family: 'Casliga';
+    font-size: 4em;
+    text-align:center;
+    width: 60%;
+    margin: auto;
+    padding-top: 2em;
+}
+.special{
+    width: 300px;
+    font-size: 1.5em;
+    padding: 0.5em !important;
+    margin: 4px;
+    border: none;
+    color: rgba(0, 0, 0, 0.678);
+    background-color: transparent;
+    border-left: 2px solid rgba(0, 0, 0, 0.478);
+
+}
+.special:focus{
+    outline: none;
+    font-weight: bolder;
+}
+.special_big{
+    font-family: 'Casliga';
+    font-size: 2em;
+}
+.special_small{
+    font-size: 1em;
+}
+.no_border{
+    border:none;
+}
+.w-100p{
+    width: 100%;
+}

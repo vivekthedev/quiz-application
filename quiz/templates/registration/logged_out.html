@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+Quizta{% endblock title %}
+{% block content %}
+<div style="height:100vh;background-color:#f2edd9;" class="hero-container">
+
+<div class="log_out_msg">
+
+    You are logged out succesfully
+    <br>
+    <div class="btn btn-lg btn-info"><a class="text-decoration-none text-muted" href="{% url 'quiz:login' %}">Go to Login</a></div>
+</div>
+</div>
+{% endblock content %}

@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import User, Quiz, Question, Option, Subject
+from django.contrib.auth.admin import UserAdmin
+
+from .models import User, Quiz, Question, Option, Subject, Result
 
 
 class BaseTabularInline(admin.TabularInline):
@@ -21,7 +23,7 @@ class OptionInline(BaseTabularInline):
 
 
 @admin.register(User)
-class UserAdmin(admin.ModelAdmin):
+class UserAdmin(UserAdmin):
     list_display = ["get_full_name", "username", "email"]
     search_fields = ("first_name", "last_name", "email", "username")
 
@@ -59,3 +61,7 @@ class QuestionAdmin(admin.ModelAdmin):
 class OptionAdmin(admin.ModelAdmin):
     list_display = ["name", "is_correct"]
     search_fields = ("name",)
+
+@admin.register(Result)
+class ResultAdmin(admin.ModelAdmin):
+    list_display = ['id', 'by', 'score', 'quiz']

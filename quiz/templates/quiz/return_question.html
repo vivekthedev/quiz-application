@@ -1,0 +1,19 @@
+
+    <div class="custom-card mb-3 border border-danger-subtle rounded p-3" style="width: 50%;" hx-swap="outerHTML" hx-target="this" >
+        <div class="ccard-header fs-2">
+            <b> {{question.name}}</b>
+
+        </div>
+        <div class="ccbody">
+            {% for option in question.option_set.all %}
+            <h5 class="ccard-title {% if option.is_correct %} bg-success
+                    
+                {% endif %}   fs-4 d-flex justify-content-between">{{option}}
+            </h5>
+            {% endfor %}
+
+        </div>
+        <a><button class="btn btn-lg btn-primary" hx-get="{% url 'quiz:edit-question' question.id %}">Edit</button></a>
+
+    </div>
+    </div>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-c d-flex  flex-column align-items-center">
+    <div class="display-2 mt-2">{{quiz.title}}</div>
+
+    <form  method="post" style="width:50%;">
+        {% csrf_token %}
+        {% for question in quiz.question_set.all %}
+        <div class="custom-card {% if question in correct %}
+            bg-success text-white 
+        {% endif %} mb-3 border border-danger-subtle rounded p-3">
+            <div class="ccard-header fs-2">
+                <b> {{question.name}}</b>
+        
+            </div>
+            <div class="ccbody">
+        {% for option in question.option_set.all %}
+                <h5 class="ccard-title   fs-4 d-flex justify-content-between" >{{option}} {% if not given %}
+                    
+                    <input type="radio" name="option_{{question.id}}" id="option_" value="{{option.id}}" required> 
+                {% endif %} 
+            </h5>
+            {% endfor %}
+                
+            </div>
+        </div>
+            {% endfor %}
+           
+           {% if not given %}
+            
+           <button class="btn btn-success" type="submit"> Submit </button>
+           {% else %}
+           
+           <a href="{% url 'quiz:start-quiz' quiz.pk %}">
+
+               <div class="btn btn-success" style="width: 100%;"> Try Again </div>
+           </a>
+           {% endif %}
+            
+        </form>
+        <h1>Score {{score}}</h1>
+        
+    </div>
+{% endblock content %}

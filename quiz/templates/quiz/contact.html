@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Contact Us
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="display-2">Contact Us</div>
+        <div class="fs-4">
+
+            We are always here to help you with any questions or concerns you may have about our Quiz Application. Whether you need
+            assistance with using the app, have a suggestion for a new quiz, or simply want to share your thoughts, we'd love to
+        hear from you.
+        <div class="gmail-link mt-3">
+            <a href="mailto:contactvivekhere@gmail.com" class="text-decoration-none">
+
+                <img src="{% static 'images/gmail-button.png' %}" alt="" width="300px">
+            </a>
+        </div>
+        <div class="whatsapp-link mt-3">
+            <a href="https://wa.me/919453912043">
+                <img src="{% static 'images/whatsapp-button.png' %}" alt=""  width="300px">
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

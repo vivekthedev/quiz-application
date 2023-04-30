@@ -1,0 +1,28 @@
+{% load widget_tweaks %}
+
+<div class="custom-card card_{{id}} mb-3 border border-danger-subtle rounded p-3" style="width: 50%;" hx-target="this" hx-swap="outerHTML">
+    <form>
+        {% csrf_token %}
+    <div class="ccard-header fs-4">
+        
+            <b> {{form.question|add_class:"w-100p"}}</b>
+            
+        </div>
+        <div class="ccbody">
+            <h5 class="ccard-title  d-flex justify-content-between">{{form.option_1|add_class:"w-100p"}}
+            </h5>
+            <h5 class="ccard-title d-flex justify-content-between">{{form.option_2|add_class:"w-100p"}}
+            </h5>
+            <h5 class="ccard-title d-flex justify-content-between">{{form.option_3|add_class:"w-100p"}}
+            </h5>
+            <h5 class="ccard-title  justify-content-between">{{form.correct_answer}}
+            </h5>
+            {{form.quiz}}
+        </div>
+        <button hx-post="{% url 'quiz:edit-question' id %}" type="submit" class="btn btn-lg btn-success">Save</button>
+        <a href=""><button class="btn btn-lg btn-danger">Cancel</button></a>
+
+
+        </form>
+</div>
+

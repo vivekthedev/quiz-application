@@ -31,14 +31,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # internal apps
+    "quiz",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # internal apps
-    "quiz",
+    'crispy_forms',
+    'widget_tweaks',
+
+
 ]
 
 MIDDLEWARE = [
@@ -127,3 +131,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "quiz.User"
+
+LOGIN_URL = "quiz:login"
+LOGOUT_REDIRECT_URL = "quiz:logout"
+LOGIN_REDIRECT_URL = "quiz:home"

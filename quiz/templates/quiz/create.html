@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block title %}
 Create a new Quiz - Quizta
 {% endblock title %}
 {% block content %}
+<div class="bg-white d-flex justify-content-center" style="height:100vh">
 
+    <form method="post" class="form_container mt-5" style=" border: none;">
+        {% csrf_token %}
+        
+        {{form|crispy}}
+        
+        <input type="submit" class="btn btn-success" value="Create">    
+        
+    </div>
+</form>
+<input type="text" placeholder="Title" class="special">
+</div>
 {% endblock content %}

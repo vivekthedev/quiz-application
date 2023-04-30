@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for quiz in quiz_qs %}
+        <h3>{{quiz.title}}</h3>
+        <h3>{{quiz.authored_on}}</h3>
+        <h3>{{quiz.authored_by}}</h3>
+        <h3>{{quiz.subject}}</h3>
+        <button>
+            <a href="{% url 'quiz:start-quiz' quiz.id %}">Start</a>
+        </button>
+    {% endfor %}
+{% endblock content %}

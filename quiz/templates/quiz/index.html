@@ -3,15 +3,74 @@
 Quizta
 {% endblock title %}
 {% block content %}
-<h1>this is home </h1>
-<button>
-    <a href="">
-        create
+<div class=" bg-white p-4"  style="height: 100vh;">
+    <div class="right-pane">
+
+        
+        <div class="fs-1">
+            Hello, {{request.user.first_name}}
+</div>
+<div class="button-container">
+
+    
+    <a class="text-decoration-none fs-4 text-white text-uppercase text-center" href="{% url 'quiz:create' %}">
+                <div class=" btn btn-lg btn-success px-3 py-1 m-3 " style="width:150px">
+                create
+            </div>
+            </a>
+            
+    <div>
+        <ul>
+            <li class="fs-5">You can create your own quizzes on the variety of subjects and share them with your friends to study or teach a particular topic.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="button-container">
+
+    
+    <a class="text-decoration-none fs-4 text-white text-uppercase text-center"  href="{% url 'quiz:list-quiz' %}">
+            <div class="btn btn-lg btn-success px-3 py-1 m-3 " style="width:150px">
+                Update
+            </div>
+        </a>
+<div>
+    <ul>
+        <li class="fs-5">Make change to the quizzes you recently created.</li>
+    </ul>
+</div>
+</div>
+<div class="button-container">
+
+    
+    <a class="text-decoration-none fs-4 text-white text-uppercase text-center"  href="{% url 'quiz:explore' %}">
+            <div class="button-container btn btn-lg btn-success px-3 py-1 m-3 " style="width:150px">
+                Explore
+            </div>
+            </a>
+<div>
+    <ul>
+        <li class="fs-5">Find what others are creating and test your knowledge.
+             </li>
+    </ul>
+</div>
+</div>
+
+<div class="button-container">
+
+
+    <a class="text-decoration-none fs-4 text-white text-uppercase text-center" href="{% url 'quiz:results' %}">
+        <div class="button-container btn btn-lg btn-success px-3 py-1 m-3 " style="width:150px">
+            Previous Results
+        </div>
     </a>
-</button>
-<button>
-    <a href="">
-        Update
-    </a>
-</button>
+    <div>
+        <ul>
+            <li class="fs-5">Find what your previous results and check your progress.
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
 {% endblock content %}

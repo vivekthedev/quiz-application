@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+    Previous Results
+{% endblock title %}
+{% block content %}
+{% regroup results by quiz as quiz_list  %}
+<div class="card-container"  style="
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ">
+<div class="display-3">Results</div>
+
+    {% for quiz in quiz_list %}
+    <div class="custom-card m-4 border border-danger-subtle rounded p-3" style="width:40%">
+    <div class="card">
+        <div class="card-header">
+            <b>{{quiz.grouper}}</b>
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for result in quiz.list %}
+            
+                <li class="list-group-item"><b>Scored {{result.score}}</b> on {{result.created_at}}</li>
+                {% endfor %}
+        </ul>
+        <div class="card-footer">
+            <a href="{% url 'quiz:start-quiz' quiz.grouper.id %}">
+
+                <button class="btn text-white btn-lg btn-info">Give this quiz</button>
+            </a>
+            
+        </div>
+    </div>
+</div>  
+{% endfor %}
+</div>
+{% endblock content %}

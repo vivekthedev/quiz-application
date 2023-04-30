@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    Quiz Detail
+{% endblock title %}
+{% block content %}
+<div class="bg-white" style="height:100vh;">
+
+    <h1 class="special special_big no_border mx-auto">{{quiz.title}} </h1>
+    <button class="btn btn-info mx-auto" style="width: 200px; display: block;"> <a class="text-decoration-none text-white" href="{% url 'quiz:home' %}">Go to Home</a> </button>
+<div class="all-questions d-flex column-gap-5 flex-wrap justify-content-center">
+
+    {% for question in quiz.question_set.all %}
+    <div class="question-container mt-5">
+        <h4 class="special text-bold"><b>Q{{forloop.counter}}:</b> {{question}}</h4>
+        {% for option in question.option_set.all %}
+        <h5 class=" mt-3 p-2   {% if option.is_correct %} bg-success-subtle
+{% endif %} "> <li> {{option}}  </h5>
+    {% endfor %}
+</div>
+{% endfor %}
+</div>
+</div>
+{% endblock content %}

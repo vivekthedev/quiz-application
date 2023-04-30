@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Input Question
+{% endblock title %}
+{% block content %}
+<div class="bg-white d-flex flex-column align-items-center" style="height:100vh">
+
+    <form method="post" class="mt-5">
+        {% csrf_token %}
+        <div id="question-container">
+            {{form|crispy}}
+            
+        </div>
+        <button type="submit" hx-post="{% url 'quiz:new-question' %}" hx-swap="innerHTML" hx-target="#question-container" class="btn btn-success"> Create </button>
+    </form>
+    <a href="{% url 'quiz:quiz_detail' form.quiz.value %}" class=" text-decoration-none text-white"><button class="btn btn-success" style="width:300px;">Exit to Detail </button></a>
+
+    </div>
+        {% endblock content %}

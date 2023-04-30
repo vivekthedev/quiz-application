@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}
+Signup to Quizter
+{% endblock title %}
+{% block content %}
+<div style="height:100vh;background-color:#f2edd9;"  class="hero-container">
+
+    <div class="hero-section d-flex flex-row-reverse align-items-center justify-content-center mt-2 pt-3 flex-wrap">
+        <div class="img-container  p-4">
+            <img src="{% static 'images/logo.png' %}" alt="" width="250px">
+    </div>
+    <div class="form_container p-4 border-right">
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        <form method="post" action="{% url 'quiz:signup' %}" class="login__form">
+            {% csrf_token %}
+            {{form|crispy}}
+
+            <input type="submit" value="register" class="btn btn-success">
+            <input type="hidden" name="next" value="{{ next }}">
+        </form>
+
+    </div>
+</div>
+
+</div>
+{% endblock %}

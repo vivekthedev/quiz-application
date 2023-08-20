@@ -6,11 +6,6 @@ import uuid
 class User(AbstractUser):
     pass
 
-    class Meta:
-        verbose_name = "User"
-        verbose_name_plural = "Users"
-
-
 class Subject(models.Model):
     name = models.CharField(max_length=200)
     sub_code = models.CharField(max_length=200)
